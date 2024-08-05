@@ -17,8 +17,8 @@
     ".viceroy": true,
     "apollo-overrides": true,
     "release-info": true,
-    "src/*/build": false,
-    "build": false,
+    "src/*/build": true,
+    "build": true,
     "env": true,
     "packageInfo*": true,
     ".bemol": true,
@@ -31,7 +31,24 @@
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true
+    "**/.factorypath": true,
+    "**/.gitignore": true,
+    "**/*.config.js": true,
+    "**/package-lock.json": true,
+    "**/node_modules": true,
+    "**/package.json.md5": true,
+    "**/jsconfig.json": true,
+    "**/tsconfig.json": true,
+    "**/vite-env.d.ts": true,
+    "**/dist": true,
+    "**/.vscode": true,
+    "wails.json": true,
+    "**/package.json": true,
+    "**/go.mod": true,
+    "**/go.sum": true,
+    "**/.prettierrc": true,
+    "**/.prettierignore": true,
+    "**/.npmrc": true
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -43,6 +60,9 @@
   "python.languageServer": "Default",
   "liveshare.connectionMode": "relay",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.macOptionClickForcesSelection": true,
   "editor.bracketPairColorization.enabled": true,
   "vscode-neovim.highlightGroups.highlights": {
     "Directory": "vim",
@@ -96,6 +116,10 @@
   "dev.containers.executeInWSL": true,
   "files.watcherExclude": {
     "**/build/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true,
     "**/.dart_tool": true,
     "**/.bloop": true,
     "**/.metals": true,
@@ -105,7 +129,7 @@
   "git.openRepositoryInParentFolders": "never",
   "github.copilot.editor.enableAutoCompletions": true,
   "telemetry.telemetryLevel": "off",
-  "viceroy.config.lastVersion": "0.53.201701",
+  "viceroy.config.lastVersion": "0.53.201737",
   "search.exclude": {
     "env": true,
     "src/*/build": true,
@@ -117,7 +141,7 @@
   "[brazilPackageConfig]": {
     "workbench.editor.languageDetection": false
   },
-  "viceroy.config.internal.lastUpdateTime": "2024-06-21T05:40:11.299Z",
+  "viceroy.config.internal.lastUpdateTime": "2024-08-01T18:25:12.163Z",
   "viceroy.config.notifyGlibcIssue": false,
   "viceroy.marketplace.extensionUpdateChannels": {
     "amzn.controls-dsl": "stable",
@@ -129,12 +153,12 @@
   "viceroy.config.setup.amazonQ": false,
 
   // Apc
-  "apc.font.family": "Jetbrains Mono",
+  "apc.font.family": "JetBrains Mono",
   "editor.fontLigatures": true,
-  "editor.letterSpacing": 0.1,
+  "editor.letterSpacing": 0.0,
   "editor.smoothScrolling": true,
   "editor.cursorBlinking": "smooth",
-  "editor.fontSize": 15,
+  "editor.fontSize": 13,
   "window.zoomLevel": -0.5,
   "apc.statusBar": {
     "height": 28,
@@ -147,16 +171,37 @@
   // Neovim
   "vscode-neovim.revealCursorScrollLine": true,
   "vscode-neovim.compositeKeys": {
-    "jk": {
+    "kj": {
       "command": "vscode-neovim.escape"
     },
     "jj": {
       "command": "vscode-neovim.escape"
+    },
+    "jk": {
+      "command": "vscode-neovim.escape"
     }
   },
   "vscode-neovim.compositeTimeout": 400,
-  "vscode-neovim.ctrlKeysForNormalMode": ["r", "w", "j", "k", "h", "l"],
-  "vscode-neovim.ctrlKeysForInsertMode": ["r", "w", "j", "k", "h", "l"],
+  "vscode-neovim.ctrlKeysForNormalMode": [
+    "r",
+    "w",
+    "j",
+    "k",
+    "h",
+    "l",
+    "u",
+    "d"
+  ],
+  "vscode-neovim.ctrlKeysForInsertMode": [
+    "r",
+    "w",
+    "j",
+    "k",
+    "h",
+    "l",
+    "u",
+    "d"
+  ],
   "vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\kurth\\AppData\\Local\\nvim\\init.lua",
 
   // Which key
@@ -1138,5 +1183,16 @@
   ],
   "[lua]": {
     "editor.defaultFormatter": "sumneko.lua"
-  }
+  },
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "viceroy.workspaceSyncStrategy": "automatic",
+  "editor.lineNumbers": "relative",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "editor.linkedEditing": true,
+  "svelte.ask-to-enable-ts-plugin": false,
+  "go.toolsManagement.autoUpdate": true
+  // "editor.fontWeight": "normal",
 }
