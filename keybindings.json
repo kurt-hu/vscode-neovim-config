@@ -21,6 +21,42 @@
     "when": "editorTextFocus && neovim.mode == 'normal'"
   },
   {
+    "key": "ctrl+d",
+    "command": "extension.multiCommand.execute",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert'",
+    "args": {
+      "interval": 20,
+      "sequence": [
+        {
+          "command": "vscode-neovim.send",
+          "args": "15j"
+        },
+        {
+          "command": "vscode-neovim.send",
+          "args": "zz"
+        }
+      ]
+    }
+  },
+  {
+    "key": "ctrl+u",
+    "command": "extension.multiCommand.execute",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert'",
+    "args": {
+      "interval": 20,
+      "sequence": [
+        {
+          "command": "vscode-neovim.send",
+          "args": "15k"
+        },
+        {
+          "command": "vscode-neovim.send",
+          "args": "zz"
+        }
+      ]
+    }
+  },
+  {
     "key": "ctrl+[",
     "command": "-vscode-neovim.escape",
     "when": "editorTextFocus && neovim.init && editorLangId not in 'neovim.editorLangIdExclusions'"
@@ -62,21 +98,6 @@
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
-    "key": "ctrl+j",
-    "command": "selectNextSuggestion",
-    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "selectPrevSuggestion",
-    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.quickOpenNavigateNext",
-    "when": "inQuickOpen"
-  },
-  {
     "key": "tab",
     "command": "selectNextSuggestion",
     "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
@@ -93,11 +114,6 @@
   },
   {
     "key": "shift+tab",
-    "command": "workbench.action.quickOpenNavigatePrevious",
-    "when": "inQuickOpen"
-  },
-  {
-    "key": "ctrl+k",
     "command": "workbench.action.quickOpenNavigatePrevious",
     "when": "inQuickOpen"
   },
@@ -157,7 +173,7 @@
     "when": "editorTextFocus && neovim.ctrlKeysInsert && !neovim.recording && neovim.mode == 'insert'"
   },
   {
-    "key": "alt+j",
+    "key": "ctrl+j",
     "command": "workbench.action.terminal.focus",
     "when": "!terminalFocus"
   },
@@ -193,5 +209,10 @@
     "key": "space",
     "command": "whichkey.show",
     "when": "neovim.mode != 'insert' && editorTextFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-deleteRight",
+    "when": "textInputFocus"
   }
 ]
