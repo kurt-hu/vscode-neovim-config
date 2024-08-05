@@ -1,8 +1,13 @@
-local keymap = vim.api.nvim_set_keymap
+require("config.lazy")
 local options = { noremap = true, silent = true }
 
-keymap('n', 'H', 'gt', options)
-keymap('n', 'L', 'gT', options)
+vim.keymap.set('n', 'H', 'gt', options)
+vim.keymap.set('n', 'L', 'gT', options)
+vim.keymap.set('n', '<C-d>', '<C-d>zz', options)
+vim.keymap.set('n', '<C-u>', '<C-u>zz', options)
+
+vim.o.scrolloff = 7
+vim.o.relativenumber = true
 
 -- Sync system clipboard with vim's clipboard
 vim.opt.clipboard = 'unnamedplus'
@@ -15,4 +20,6 @@ vim.opt.smartcase = true
 
 if vim.g.vscode then
 else
+    vim.keymap.set('i', 'jj', '<Esc>', options)
+    vim.keymap.set('i', 'kj', '<Esc>', options)
 end
